@@ -4,7 +4,7 @@ module.exports = {
   // Use the CDN in production and localhost for development.
   assetPrefix: isProd ? '/jdtan.github.io/' : '',
   images: {
-    loader: 'imgix',
+    loader: 'akamai',
     path: '',
   },
 }
