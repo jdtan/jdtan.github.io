@@ -1,9 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  assetPrefix: isProd ? '/jdtan.github.io/' : '',
+  assetPrefix: isProd ? "/jdtan.github.io/" : "",
   images: {
-    loader: 'akamai',
-    path: '',
+    loader: "akamai",
+    path: "",
   },
-}
+};
