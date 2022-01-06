@@ -39,9 +39,9 @@ const WelcomeText = styled.div`
   // margin-top: 25vh;
 `;
 
-const AccentColor = styled.span`
-  color: #ff5d73;
-`;
+// const AccentColor = styled.span`
+//   color: #ff5d73;
+// `;
 
 const InfoText = styled.div`
   font-weight: 300;
@@ -50,10 +50,10 @@ const InfoText = styled.div`
   font-size: 30px;
 `;
 
-const RightHomeContainer = styled.div`
-  margin-right: 15vw;
-  flex: 1;
-`;
+// const RightHomeContainer = styled.div`
+//   margin-right: 15vw;
+//   flex: 1;
+// `;
 
 const IconContainer = styled.div`
   position: absolute;
@@ -66,15 +66,15 @@ const Home = () => {
       <HomeContentContainer>
         <ImageContainer>
           <Image
-            src="/assets/waving-avatar-svg.svg"
+            src="/assets/waving-avatar.svg"
             layout="fill"
             objectFit="contain"
           />
         </ImageContainer>
         <div>
           <WelcomeText>
-            HELLO<AccentColor>!</AccentColor>
-            {"\n"}I<AccentColor>'</AccentColor>M JADDIE
+            HELLO<span className="accentColor">!</span>
+            {"\n"}I<span className="accentColor">'</span>M JADDIE
           </WelcomeText>
           <InfoText>A Student Web Developer</InfoText>
         </div>

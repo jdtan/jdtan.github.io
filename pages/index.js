@@ -38,6 +38,8 @@ const NavButonContainer = styled.a`
   font-weight: 500;
   font-size: 24px;
   padding: 0 15px;
+  color: #000000;
+  text-decoration: none;
 
   &:hover {
     color: #ff5d73;

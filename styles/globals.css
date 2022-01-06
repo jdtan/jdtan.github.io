@@ -18,6 +18,7 @@ a {
 }
 
 html {
+  font-size: 22px;
   scroll-behavior: smooth;
   scrollbar-color: #ff5d73 white; /* thumb and track color */
   scrollbar-width: thin;
@@ -52,4 +53,8 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff5d73;
+}
+
+.accentColor {
+  color: #ff5d73;
 }

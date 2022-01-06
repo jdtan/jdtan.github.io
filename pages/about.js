@@ -16,9 +16,9 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
-const AccentColor = styled.span`
-  color: #ff5d73;
-`;
+// const AccentColor = styled.span`
+//   color: #ff5d73;
+// `;
 
 const AboutMeText = styled.div`
   background-color: #ffecee;
@@ -27,7 +27,7 @@ const AboutMeText = styled.div`
   height: 70vh;
   padding: 50px;
   padding-top: 50px;
-  font-size: 26px;
+  // font-size: 26px;
   line-height: 1.5em;
   padding-top: 15vh;
 `;
@@ -46,14 +46,13 @@ const tempText =
 const AboutMe = () => {
   return (
     <AboutPage id="about-me">
-      {/* the about me page that doesnt work{" "} */}
       <div className="sectionTitle">
-        About Me<AccentColor>:</AccentColor>
+        About Me<span className="accentColor">:</span>
       </div>
       <ContentContainer>
         <ImageContainer>
           <Image
-            src="/assets/picwithbg_PNG4.png"
+            src="/assets/aboutme-pic.png"
             layout="fill"
             objectFit="contain"
           />
