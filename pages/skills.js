@@ -75,8 +75,8 @@ const TypeButton = styled.button`
       : props.btnIndex === 3
       ? "0 12px 12px 0"
       : "0"};
-  // border-radius: ${(props) =>
-    props.btnIndex === 3 ? "0 12px 12px 0" : "0px"};
+  /* // border-radius: ${(props) =>
+    props.btnIndex === 3 ? "0 12px 12px 0" : "0px"} */
   &:hover {
     font-weight: 600 !important;
   }

@@ -32,8 +32,8 @@ const ImageContainer = styled.div`
 
 const WelcomeText = styled.div`
   font-family: Montserrat;
-  font-weight: 700;
-  font-size: 72px;
+  font-weight: 400;
+  font-size: 80px;
   text-align: right;
   white-space: pre-wrap;
   // margin-top: 25vh;
@@ -66,7 +66,7 @@ const Home = () => {
       <HomeContentContainer>
         <ImageContainer>
           <Image
-            src="/assets/waving-avatar.svg"
+            src="/assets/waving-avatar3.svg"
             layout="fill"
             objectFit="contain"
           />

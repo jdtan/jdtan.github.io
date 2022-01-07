@@ -4,6 +4,7 @@ import Cplusplus from "./Cplusplus";
 import Css from "./Css";
 import Docker from "./Docker";
 import Git from "./Git";
+import Github from "./Github";
 import Html from "./Html";
 import Java from "./Java";
 import Javascript from "./Javascript";
@@ -24,6 +25,7 @@ const TypesOfIcons = {
   CSS: Css,
   Docker: Docker,
   Git: Git,
+  Github: Github,
   HTML: Html,
   Java: Java,
   JavaScript: Javascript,
