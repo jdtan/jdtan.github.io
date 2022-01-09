@@ -117,10 +117,8 @@ const ProjectCards = ({ projects = [] }) => {
     { bg: "#E6D2E7", text: "#B69CB8" },
   ];
 
-  const theTools = ["React", "Node.js", "Flask", "Heroku", "Docker"];
-
   const renderChips = (tools) =>
-    tools.map((item) => <SingleChip>{item}</SingleChip>);
+    tools.map((item, index) => <SingleChip key={index}>{item}</SingleChip>);
 
   const handleMouseEnter = (currProject) => {
     setDetailVisible(true);
@@ -131,6 +129,7 @@ const ProjectCards = ({ projects = [] }) => {
     <CardContainer>
       {projects.map((item, index) => (
         <ProjectCard
+          key={index}
           style={{ backgroundColor: projectColors[index].bg }}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => setDetailVisible(false)}

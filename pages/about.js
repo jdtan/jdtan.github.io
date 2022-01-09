@@ -45,7 +45,7 @@ const tempText =
 
 const AboutMe = () => {
   return (
-    <AboutPage id="about-me">
+    <AboutPage id="about-me" className="page">
       <div className="sectionTitle">
         About Me<span className="accentColor">:</span>
       </div>

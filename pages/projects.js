@@ -36,7 +36,7 @@ const ProjectContainer = styled.div`
 
 const Projects = () => {
   return (
-    <div id="projects" style={{ paddingTop: "70px" }}>
+    <div id="projects" className="page" style={{}}>
       <div className="sectionTitle">
         My Projects<span className="accentColor">:</span>
       </div>

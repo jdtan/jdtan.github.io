@@ -18,6 +18,7 @@ const BacktoTopButton = styled.button`
   box-shadow: 0 5px 10px #ccc;
   padding: 10px;
   font-size: initial;
+  z-index: 200;
 
   &:hover {
     background: #ff5d73;
@@ -37,15 +38,16 @@ const TopButton = () => {
     });
   }, []);
 
-  const scrollToTop = () => {
+  const handleClick = (e) => {
     window.scrollTo({
       top: 0,
     });
   };
+
   return (
     <>
       {showButton && (
-        <BacktoTopButton onClick={scrollToTop}>
+        <BacktoTopButton onClick={() => handleClick()}>
           <FontAwesomeIcon icon={faAngleUp} color={"white"} size={"3x"} />
         </BacktoTopButton>
       )}

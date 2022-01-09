@@ -18,9 +18,9 @@ a {
 }
 
 html {
-  font-size: 22px;
+  font-size: 20px;
   scroll-behavior: smooth;
-  scrollbar-color: #ff5d73 white; /* thumb and track color */
+  scrollbar-color: #ff5d73 transparent; /* thumb and track color */
   scrollbar-width: thin;
 }
 
@@ -39,22 +39,63 @@ body {
   width: 16px;
 }
 
-/* Track */
-/* ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-} */
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffecee;
   border-right: 6px white solid;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #ff5d73;
-}
-
 .accentColor {
   color: #ff5d73;
+}
+
+.page {
+  padding-top: 70px;
+}
+
+input,
+textarea {
+  border: none;
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 300;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-size: 0.8em;
+}
+
+input:focus,
+textarea:focus {
+  outline: #ff5d73 2px solid !important;
+  background-color: white;
+}
+
+button:focus {
+  outline: #ff5d73 2px solid;
+}
+
+input:hover,
+textarea:hover {
+  outline: #ff9daa 2px solid;
+}
+
+input,
+textarea,
+label {
+  display: block;
+}
+
+.required:after {
+  content: " *";
+  color: #ff5d73;
+}
+
+textarea {
+  resize: none;
+}
+
+input {
+  height: 50px;
 }

@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-// import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head";
 import Script from "next/script";
 
@@ -7,6 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"

@@ -16,7 +16,7 @@ const IconSkillContainer = styled.div`
 `;
 
 const SvgContainer = styled.div`
-  width: 55px;
+  width: 45px;
 `;
 
 const IconTitle = styled.div`
@@ -65,20 +65,22 @@ const NavContainer = styled.div`
 
 const TypeButton = styled.button`
   border: #ff5d73 2px solid;
+  padding: 5px 10px;
   margin-left: -2px;
   width: 300px;
   font-size: 0.9em;
-  // font-weight: 500;
   border-radius: ${(props) =>
     props.btnIndex === 0
       ? "12px 0 0 12px"
       : props.btnIndex === 3
       ? "0 12px 12px 0"
       : "0"};
-  /* // border-radius: ${(props) =>
-    props.btnIndex === 3 ? "0 12px 12px 0" : "0px"} */
   &:hover {
     font-weight: 600 !important;
+  }
+  &:focus {
+    outline-offset: 2px;
+    z-index: 5;
   }
 `;
 
@@ -119,7 +121,7 @@ const Skills = () => {
   const [showIcons, setShowIcons] = useState(false);
 
   return (
-    <div id="skill-set" style={{ paddingTop: "70px" }}>
+    <div id="page skill-set" style={{}}>
       <div className="sectionTitle">
         Skill Set<span className="accentColor">:</span>
       </div>
@@ -133,6 +135,7 @@ const Skills = () => {
               </>
             )}
             btnIndex={iter}
+            key={iter}
             style={{
               backgroundColor: item.key === currTab.key ? "#ff5d73" : "white",
               color: item.key === currTab.key ? "white" : "#ff5d73",
@@ -147,9 +150,9 @@ const Skills = () => {
         {" "}
         <IconGrid style={{ height: showIcons ? "auto" : "270px" }}>
           {currTab.index === 0
-            ? tabData.map((skillObj) =>
-                skillObj.data.map((skillData) => (
-                  <IconSkillContainer>
+            ? tabData.map((skillObj, parentIndex) =>
+                skillObj.data.map((skillData, index) => (
+                  <IconSkillContainer key={parentIndex + "" + index}>
                     <SvgContainer>
                       <Icon type={skillData} fill={"#7C7A7A"} />
                     </SvgContainer>
@@ -157,9 +160,9 @@ const Skills = () => {
                   </IconSkillContainer>
                 ))
               )
-            : tabData[currTab.index].data.map(function (item) {
+            : tabData[currTab.index].data.map(function (item, index) {
                 return (
-                  <IconSkillContainer>
+                  <IconSkillContainer key={index}>
                     <SvgContainer>
                       <Icon type={item} fill={"#7C7A7A"} />
                     </SvgContainer>

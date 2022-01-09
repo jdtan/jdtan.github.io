@@ -82,22 +82,21 @@ const Index = () => {
     <>
       <Head>
         <title>Jaddie Tan</title>
-        <link rel="icon" href="/assets/logo13.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </Head>
 
       <NavBarContainer>
-        <NavButonContainer href="#about-me">
+        <NavButonContainer href={"#about-me"}>
           {navButtons[0].label}
         </NavButonContainer>
-        <NavButonContainer href="#projects">
+        <NavButonContainer href={"#projects"}>
           {navButtons[1].label}
         </NavButonContainer>
-        <NavButonContainer href="#contact">
+        <NavButonContainer href={"#contact"}>
           {navButtons[2].label}
         </NavButonContainer>
-        <NavButonContainer href="#resume">
+        <NavButonContainer href={"/Resume010822.pdf"} target={"_blank"}>
           {navButtons[3].label}
         </NavButonContainer>
       </NavBarContainer>

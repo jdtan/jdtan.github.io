@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="135.46666mm"
+   height="135.46666mm"
+   viewBox="0 0 135.46666 135.46666"
+   version="1.1"
+   id="svg31357"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="social-linkedin.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview31359"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.77682379"
+     inkscape:cx="-128.08568"
+     inkscape:cy="556.75432"
+     inkscape:window-width="1858"
+     inkscape:window-height="1057"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs31354" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-139.00864,-1.4077232)">
+    <path
+       id="path1408-5"
+       style="fill:#fff4f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       d="m 206.74197,1.4077232 c -37.41208,0 -67.73333,30.3212498 -67.73333,67.7333328 0,37.412084 30.32125,67.733334 67.73333,67.733334 37.41208,0 67.73333,-30.32125 67.73333,-67.733334 0,-37.412083 -30.32125,-67.7333328 -67.73333,-67.7333328 z"
+       inkscape:export-filename="C:\Users\jdtan\OneDrive\Documents\portfolio\social icons\linkedin.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       d="M 191.57879,59.840502 V 95.703767 H 179.63643 V 59.840502 Z m 0.75997,-11.073818 c 0.0241,1.761199 -0.58506,3.232891 -1.82754,4.415049 -1.2425,1.182158 -2.87703,1.773264 -4.90362,1.773264 h -0.0724 c -1.97833,0 -3.57065,-0.591079 -4.77694,-1.773264 -1.20631,-1.182158 -1.80945,-2.65385 -1.80945,-4.415049 0,-1.785329 0.62124,-3.263027 1.86373,-4.433147 1.24249,-1.170146 2.86496,-1.755166 4.86741,-1.755166 2.00246,0 3.60684,0.58502 4.81314,1.755166 1.2063,1.17012 1.82151,2.647818 1.84564,4.433147 z M 234.5351,75.14842 V 95.703767 H 222.62893 V 76.523592 c 0,-2.533227 -0.48855,-4.517602 -1.46566,-5.953072 -0.97709,-1.435497 -2.50306,-2.153258 -4.5779,-2.153258 -1.51994,0 -2.79258,0.416136 -3.81794,1.248542 -1.02535,0.832352 -1.79135,1.863725 -2.298,3.094143 -0.26538,0.723794 -0.39808,1.7009 -0.39808,2.931319 v 20.012501 h -11.90616 c 0.0482,-9.626283 0.0724,-17.431015 0.0724,-23.414276 0,-5.983234 -0.0121,-9.553892 -0.0362,-10.71192 l -0.0362,-1.737096 h 11.90616 v 5.211207 0 c 0.48252,-0.772001 0.97711,-1.447535 1.48375,-2.026549 0.50665,-0.579041 1.11583,-1.206315 1.9723,-1.881823 0.85647,-0.67556 1.90595,-1.200282 3.14844,-1.574244 1.24249,-0.373936 2.6237,-0.560917 4.14364,-0.560917 4.12554,0 7.44287,1.369166 9.95197,4.107471 2.5091,2.738305 3.76365,6.749203 3.76365,12.0328 z"
+       fill="currentColor"
+       id="path2-2"
+       style="fill:none;stroke:#fe5e74;stroke-width:1.90792;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="ccccccsssssssscsccsssscsccssccccssssss"
+       inkscape:export-filename="C:\Users\jdtan\OneDrive\Documents\portfolio\social icons\linkedin.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
