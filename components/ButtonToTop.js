@@ -18,7 +18,7 @@ const BacktoTopButton = styled.button`
   box-shadow: 0 5px 10px #ccc;
   padding: 10px;
   font-size: initial;
-  z-index: 200;
+  z-index: 100;
 
   &:hover {
     background: #ff5d73;

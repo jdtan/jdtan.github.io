@@ -1,3 +1,8 @@
+/* --mobile-size: 480px;
+--table-size: 768px; */
+/* :root {
+} */
+
 html,
 body {
   padding: 0;
@@ -98,4 +103,55 @@ textarea {
 
 input {
   height: 50px;
+}
+
+.ant-select-selector {
+  border: 1px solid #ff5d73 !important;
+  border-radius: 12px !important;
+  height: 40px !important;
+  align-items: center !important;
+}
+.ant-select-selector:hover,
+.ant-select-focus {
+  border-color: none !important;
+}
+
+.ant-select:hover .ant-select-selector {
+  border-color: #ff5d73 !important;
+  box-shadow: none !important;
+}
+
+.ant-select-arrow {
+  color: #ff5d73 !important;
+}
+.ant-select-item.ant-select-item-option.ant-select-item-option-active.ant-select-item-option-selected[aria-selected="true"] {
+  background-color: #ffecee;
+}
+
+.ant-select-selection-item {
+  letter-spacing: 0.05em;
+  color: #ff5d73;
+}
+
+.ant-select-dropdown {
+  border-radius: 12px !important;
+}
+
+.ant-select-item.ant-select-item-option,
+.ant-select-item.ant-select-item-option.ant-select-item-option-active.ant-select-item-option-selected {
+  color: #494949;
+}
+.ant-select-focus:not(.ant-select-disabled).ant-select:not(.not-select-customize-input).ant-select-selector {
+  box-shadow: 0 0 0 2px #ff5d73 !important;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 25px;
+  }
+
+  .sectionTitle {
+    line-height: 30px;
+    font-size: 30px;
+  }
 }
