@@ -18,11 +18,15 @@ const Navigation = ({ screenSize = {}, pages = [] }) => {
   const NavBarMenu = styled.div.attrs(() => ({
     className: "nav-menu",
   }))`
-    position: fixed;
+    position: absolute;
     right: 0;
     margin-right: 20px;
 
-    @media (max-width: ${screenSize["tablet"]}) {
+    @media only screen and (max-width: ${screenSize["l-tablet"]}) {
+      right: auto;
+      margin-right: 0;
+    }
+    @media only screen and (max-width: ${screenSize["tablet"]}) {
       display: ${!hamActive && "none"};
       ${(hamActive) =>
         hamActive &&
@@ -32,31 +36,39 @@ const Navigation = ({ screenSize = {}, pages = [] }) => {
           inset: 0;
           padding-top: 20vh;
           z-index: 500;
+          width: 100%;
         `}
     }
   `;
 
-  const NavButtonContainer = styled.a.attrs(() => ({
+  const NavButtonContainer = styled.button.attrs(() => ({
     className: "nav-button",
   }))`
     font-family: Montserrat;
-    font-size: 24px;
+    font-size: 2.4rem;
     padding: 0 15px;
     text-decoration: none;
     background-color: transparent !important;
     letter-spacing: 0.05em;
+    border: none;
+    color: black;
 
-    &:hover {
+    &:hover,
+    :focus {
       color: #ff5d73;
     }
-    @media (max-width: ${screenSize["tablet"]}) {
+    &:focus {
+      outline: none;
+    }
+    @media only screen and (max-width: ${screenSize["tablet"]}) {
       ${(hamActive) =>
         hamActive &&
         css`
           display: block;
           text-align: center;
-          margin: 20px;
+          margin: 1em 0;
           color: white;
+          width: 100%;
           &:hover {
             color: white;
             font-weight: 500;
@@ -92,6 +104,9 @@ const Navigation = ({ screenSize = {}, pages = [] }) => {
       80%,
       rgba(255, 255, 255, 0)
     );
+    @media only screen and (max-width: ${screenSize["l-tablet"]}) {
+      width: 100vw;
+    }
   `;
 
   const HamburgerBar = styled.span`
@@ -106,6 +121,8 @@ const Navigation = ({ screenSize = {}, pages = [] }) => {
   `;
 
   const HamburgerCSS = css`
+    transition: all 0.3s ease-in-out;
+
     ${HamburgerBar}:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
       background-color: white;
@@ -126,8 +143,9 @@ const Navigation = ({ screenSize = {}, pages = [] }) => {
     display: none;
     position: fixed;
     z-index: 600;
-    inset: 30px 40px auto auto;
-    @media (max-width: ${screenSize["tablet"]}) {
+    transition: all 0.3s ease-in-out;
+    inset: 30px 30px auto auto;
+    @media only screen and (max-width: ${screenSize["tablet"]}) {
       cursor: pointer;
       display: block;
       ${(props) => props.isActive && HamburgerCSS}

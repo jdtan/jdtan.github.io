@@ -2,6 +2,9 @@ import "../styles/globals.css";
 import "antd/dist/antd.css";
 import Head from "next/head";
 import Script from "next/script";
+// import {ThemeProvider} from 'styled-components';
+
+// const theme = {};
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -25,8 +28,10 @@ function MyApp({ Component, pageProps }) {
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"
       ></Script>
-
+      {/* <ThemeProvider theme={theme}> */}
       <Component {...pageProps} />
+
+      {/* </ThemeProvider> */}
     </>
   );
 }

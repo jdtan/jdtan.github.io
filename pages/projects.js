@@ -7,9 +7,9 @@ const projectData = [
   {
     title: "GitLab Analyzer",
     image: "project1-gitlab.png",
-    tools: ["React", "Node.js", "Flask", "Heroku", "Docker"],
+    tools: ["React", "Node.js", "Flask", "Docker"],
     description:
-      "description goes here description goes heredescription goes here description goes here",
+      "A web application that analyses GitLab repositories' activity and data.",
     link: "https://github.com/jdtan/gitlab-analyzer",
   },
   {
@@ -17,7 +17,7 @@ const projectData = [
     image: "project3-tetris.png",
     tools: ["React", "HTML", "CSS"],
     description:
-      "description goes here description goes heredescription goes here description goes here",
+      "A Tetris-inspired line-clearing puzzle game with a drive drawn from the Tetris effect.",
     link: "https://github.com/jdtan/tetris",
   },
   {
@@ -25,7 +25,7 @@ const projectData = [
     image: "project2-ricebowl.png",
     tools: ["React", "Node.js", "MongoDB", "Nginx"],
     description:
-      "description goes here description goes heredescription goes here description goes here",
+      "All of your favourite recipes are read, organized, and saved by this web application.",
     link: "https://github.com/jdtan/rice-bowl-recipe",
   },
 ];
@@ -36,7 +36,7 @@ const ProjectContainer = styled.div`
 
 const Projects = () => {
   return (
-    <div id="projects" className="page" style={{}}>
+    <div id="projects" className="page">
       <div className="sectionTitle">
         My Projects<span className="accentColor">:</span>
       </div>

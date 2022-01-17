@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/fontawesome-free-solid";
@@ -8,32 +8,6 @@ import { Select } from "antd";
 import Icon from "../components/Icons/Icons";
 
 const { Option } = Select;
-
-const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
-
-  const updateTarget = useCallback((e) => {
-    if (e.matches) {
-      setTargetReached(true);
-    } else {
-      setTargetReached(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    media.addListener(updateTarget);
-
-    // Check on mount (callback is not called until a change occurs)
-    if (media.matches) {
-      setTargetReached(true);
-    }
-
-    return () => media.removeListener(updateTarget);
-  }, []);
-
-  return targetReached;
-};
 
 const tabData = [
   {
@@ -67,10 +41,9 @@ const tabData = [
   },
 ];
 
-const Skills = ({ screenSize = {} }) => {
+const Skills = ({ screenSize = {}, isMobile, isMTablet }) => {
   const [currTab, setCurrTab] = useState({ key: tabData[0].key, index: 0 });
   const [showIcons, setShowIcons] = useState(false);
-  const isMobile = useMediaQuery(480);
 
   const IconSkillContainer = styled.div`
     display: flex;
@@ -80,7 +53,7 @@ const Skills = ({ screenSize = {} }) => {
     width: 200px;
     padding: 25px 50px;
 
-    @media (max-width: ${screenSize["mobile"]}) {
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
       width: 100px;
       padding: 25px;
     }
@@ -88,7 +61,10 @@ const Skills = ({ screenSize = {} }) => {
 
   const SvgContainer = styled.div`
     width: 45px;
-    @media (max-width: ${screenSize["mobile"]}) {
+    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+      width: 38px;
+    }
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
       width: 30px;
     }
   `;
@@ -97,9 +73,10 @@ const Skills = ({ screenSize = {} }) => {
     font-weight: 400;
     text-transform: uppercase;
     color: #ff5d73;
-    margin-top: 4px;
-    @media (max-width: ${screenSize["mobile"]}) {
-      font-size: 16px;
+    margin-top: 6px;
+    font-size: 1.8rem;
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
+      font-size: 1.6rem;
     }
   `;
 
@@ -114,8 +91,13 @@ const Skills = ({ screenSize = {} }) => {
     align-items: flex-start;
     height: ${(props) => (props.fullheight ? "auto" : "270px")};
 
-    @media (max-width: ${screenSize["mobile"]}) {
-      height: ${(props) => (props.fullheight ? "auto" : "335px")};
+    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+      height: ${(props) =>
+        props.isAll ? (props.fullheight ? "auto" : "245px") : "auto"};
+    }
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
+      height: ${(props) =>
+        props.isAll ? (props.fullheight ? "auto" : "335px") : "auto"};
     }
   `;
 
@@ -123,21 +105,29 @@ const Skills = ({ screenSize = {} }) => {
     width: 60vw;
     justify-content: center;
     margin: auto;
-    @media (max-width: ${screenSize["mobile"]}) {
+    max-width: 90vw;
+    @media only screen and (max-width: ${screenSize["l-tablet"]}) {
+      width: 58em;
+    }
+    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+      width: 47em;
+    }
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
       width: 100%;
     }
   `;
 
   const ButtonContainer = styled.button`
-    width: 100%;
+    /* width: 100%; */
     background: white;
     border: none;
     color: #7c7a7a;
     font-weight: 600;
-    font-size: 0.8em;
+    font-size: 1.6rem;
     display: flex;
     flex-direction: column;
     padding: 10px;
+    margin: auto;
     margin-top: 10px;
   `;
 
@@ -149,11 +139,11 @@ const Skills = ({ screenSize = {} }) => {
   `;
 
   const TypeButton = styled.button`
-    border: #ff5d73 2px solid;
-    padding: 5px 10px;
-    margin-left: -2px;
+    border: #ff5d73 1px solid;
+    padding: 0.5em 1.5em;
+    margin-left: -1px;
     width: 300px;
-    font-size: 0.9em;
+    font-size: 1.8rem;
     border-radius: ${(props) =>
       props.btnIndex === 0
         ? "12px 0 0 12px"
@@ -162,6 +152,9 @@ const Skills = ({ screenSize = {} }) => {
         : "0"};
     &:hover {
       font-weight: 600 !important;
+      /* background-color: rgba(255, 93, 115, 0.5) !important;
+      color: white !important; */
+      /* border-width: 2px; */
     }
     &:focus {
       outline-offset: 2px;
@@ -173,6 +166,18 @@ const Skills = ({ screenSize = {} }) => {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+      max-width: 90%;
+      width: 65vw;
+      margin: 20px auto 10px auto;
+      display: flex;
+    }
+    @media only screen and (max-width: ${screenSize["mobile"]}) {
+      max-width: 100%;
+      width: 100%;
+      margin: 20px 0 10px 0;
+    }
   `;
 
   function handleChange(value) {
@@ -196,11 +201,11 @@ const Skills = ({ screenSize = {} }) => {
     setShowIcons(false);
   }
   return (
-    <div id="page skill-set" style={{}}>
+    <div id="page skill-set" style={{ marginTop: "4em" }}>
       <div className="sectionTitle">
         Skill Set<span className="accentColor">:</span>
       </div>
-      {isMobile ? (
+      {isMTablet ? (
         <StyledSelect
           defaultValue="all"
           onChange={(value, key) => handleChange(value, key)}
@@ -238,7 +243,7 @@ const Skills = ({ screenSize = {} }) => {
 
       <SkillsContainer>
         {" "}
-        <IconGrid fullheight={showIcons}>
+        <IconGrid fullheight={showIcons} isAll={currTab.index === 0}>
           {currTab.index === 0
             ? tabData.map((skillObj, parentIndex) =>
                 skillObj.data.map((skillData, index) => (
