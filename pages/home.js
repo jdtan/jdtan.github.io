@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import screenSize from "../components/ScreenSizes";
-
 import styled, { keyframes } from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/fontawesome-free-solid";
+
+import screenSize from "../components/ScreenSizes";
 
 const HomeContainer = styled.div`
   height: 100vh;
@@ -36,7 +36,6 @@ const PositionImage = styled.div`
   @media only screen and (max-width: ${screenSize["tablet"]}) {
     position: absolute;
     margin-top: 19em;
-    /* margin-top: 160px; */
     top: 0;
   }
   @media only screen and (max-width: ${screenSize["mobile"]}) {
@@ -83,11 +82,6 @@ const InfoText = styled.div`
   }
 `;
 
-// const RightHomeContainer = styled.div`
-//   margin-right: 15vw;
-//   flex: 1;
-// `;
-
 const IconContainer = styled.div`
   position: absolute;
   bottom: 10vh;
@@ -117,10 +111,7 @@ const bounce = keyframes`
   `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
-  /* background-color: red; */
-  /* margin: auto; */
   animation: 1.5s ${bounce} ease-out;
-  /* width: 100%; */
 `;
 
 const TextContainer = styled.div`

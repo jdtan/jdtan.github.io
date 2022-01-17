@@ -9,7 +9,7 @@ const projectData = [
     image: "project1-gitlab.png",
     tools: ["React", "Node.js", "Flask", "Docker"],
     description:
-      "A web application that analyses GitLab repositories' activity and data.",
+      "A web application for analyzing activity and data of GitLab repositories.",
     link: "https://github.com/jdtan/gitlab-analyzer",
   },
   {
@@ -25,7 +25,7 @@ const projectData = [
     image: "project2-ricebowl.png",
     tools: ["React", "Node.js", "MongoDB", "Nginx"],
     description:
-      "All of your favourite recipes are read, organized, and saved by this web application.",
+      "A web application that saves, organises, and reads your favourite recipes.",
     link: "https://github.com/jdtan/rice-bowl-recipe",
   },
 ];

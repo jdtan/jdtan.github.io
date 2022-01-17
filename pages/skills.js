@@ -1,13 +1,149 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/fontawesome-free-solid";
-import styled from "styled-components";
 import { Select } from "antd";
 
-import Icon from "../components/Icons/Icons";
-
 const { Option } = Select;
+
+import Icon from "../components/Icons/Icons";
+import screenSize from "../components/ScreenSizes";
+
+const IconSkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  padding: 25px 50px;
+
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    width: 100px;
+    padding: 25px;
+  }
+`;
+
+const SvgContainer = styled.div`
+  width: 45px;
+  @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+    width: 38px;
+  }
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    width: 30px;
+  }
+`;
+
+const IconTitle = styled.div`
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ff5d73;
+  margin-top: 6px;
+  font-size: 1.8rem;
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    font-size: 1.6rem;
+  }
+`;
+
+const IconGrid = styled.div.attrs(() => ({
+  id: "skill-div",
+}))`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+  overflow: hidden;
+  align-items: flex-start;
+  height: ${(props) => (props.fullheight ? "auto" : "270px")};
+
+  @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+    height: ${(props) =>
+      props.isAll ? (props.fullheight ? "auto" : "245px") : "auto"};
+  }
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    height: ${(props) =>
+      props.isAll ? (props.fullheight ? "auto" : "335px") : "auto"};
+  }
+`;
+
+const SkillsContainer = styled.div`
+  width: 60vw;
+  justify-content: center;
+  margin: auto;
+  max-width: 90vw;
+  @media only screen and (max-width: ${screenSize["l-tablet"]}) {
+    width: 58em;
+  }
+  @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+    width: 47em;
+  }
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    width: 100%;
+  }
+`;
+
+const ButtonContainer = styled.button`
+  /* width: 100%; */
+  background: white;
+  border: none;
+  color: #7c7a7a;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+`;
+
+const NavContainer = styled.div`
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const TypeButton = styled.button`
+  border: #ff5d73 1px solid;
+  padding: 0.5em 1.5em;
+  margin-left: -1px;
+  width: 300px;
+  font-size: 1.8rem;
+  border-radius: ${(props) =>
+    props.btnIndex === 0
+      ? "12px 0 0 12px"
+      : props.btnIndex === 3
+      ? "0 12px 12px 0"
+      : "0"};
+  &:hover {
+    font-weight: 600 !important;
+    /* background-color: rgba(255, 93, 115, 0.5) !important;
+      color: white !important; */
+    /* border-width: 2px; */
+  }
+  &:focus {
+    outline-offset: 2px;
+    z-index: 5;
+  }
+`;
+
+const StyledSelect = styled(Select)`
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  @media only screen and (max-width: ${screenSize["m-tablet"]}) {
+    max-width: 90%;
+    width: 65vw;
+    margin: 20px auto 10px auto;
+    display: flex;
+  }
+  @media only screen and (max-width: ${screenSize["mobile"]}) {
+    max-width: 100%;
+    width: 100%;
+    margin: 20px 0 10px 0;
+  }
+`;
 
 const tabData = [
   {
@@ -41,144 +177,9 @@ const tabData = [
   },
 ];
 
-const Skills = ({ screenSize = {}, isMobile, isMTablet }) => {
-  const [currTab, setCurrTab] = useState({ key: tabData[0].key, index: 0 });
+const Skills = ({ isMobile, isMTablet }) => {
   const [showIcons, setShowIcons] = useState(false);
-
-  const IconSkillContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    padding: 25px 50px;
-
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      width: 100px;
-      padding: 25px;
-    }
-  `;
-
-  const SvgContainer = styled.div`
-    width: 45px;
-    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
-      width: 38px;
-    }
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      width: 30px;
-    }
-  `;
-
-  const IconTitle = styled.div`
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #ff5d73;
-    margin-top: 6px;
-    font-size: 1.8rem;
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      font-size: 1.6rem;
-    }
-  `;
-
-  const IconGrid = styled.div.attrs(() => ({
-    id: "skill-div",
-  }))`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: auto;
-    overflow: hidden;
-    align-items: flex-start;
-    height: ${(props) => (props.fullheight ? "auto" : "270px")};
-
-    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
-      height: ${(props) =>
-        props.isAll ? (props.fullheight ? "auto" : "245px") : "auto"};
-    }
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      height: ${(props) =>
-        props.isAll ? (props.fullheight ? "auto" : "335px") : "auto"};
-    }
-  `;
-
-  const SkillsContainer = styled.div`
-    width: 60vw;
-    justify-content: center;
-    margin: auto;
-    max-width: 90vw;
-    @media only screen and (max-width: ${screenSize["l-tablet"]}) {
-      width: 58em;
-    }
-    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
-      width: 47em;
-    }
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      width: 100%;
-    }
-  `;
-
-  const ButtonContainer = styled.button`
-    /* width: 100%; */
-    background: white;
-    border: none;
-    color: #7c7a7a;
-    font-weight: 600;
-    font-size: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin: auto;
-    margin-top: 10px;
-  `;
-
-  const NavContainer = styled.div`
-    padding: 20px 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  `;
-
-  const TypeButton = styled.button`
-    border: #ff5d73 1px solid;
-    padding: 0.5em 1.5em;
-    margin-left: -1px;
-    width: 300px;
-    font-size: 1.8rem;
-    border-radius: ${(props) =>
-      props.btnIndex === 0
-        ? "12px 0 0 12px"
-        : props.btnIndex === 3
-        ? "0 12px 12px 0"
-        : "0"};
-    &:hover {
-      font-weight: 600 !important;
-      /* background-color: rgba(255, 93, 115, 0.5) !important;
-      color: white !important; */
-      /* border-width: 2px; */
-    }
-    &:focus {
-      outline-offset: 2px;
-      z-index: 5;
-    }
-  `;
-
-  const StyledSelect = styled(Select)`
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
-
-    @media only screen and (max-width: ${screenSize["m-tablet"]}) {
-      max-width: 90%;
-      width: 65vw;
-      margin: 20px auto 10px auto;
-      display: flex;
-    }
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      max-width: 100%;
-      width: 100%;
-      margin: 20px 0 10px 0;
-    }
-  `;
+  const [currTab, setCurrTab] = useState({ key: tabData[0].key, index: 0 });
 
   function handleChange(value) {
     let pos = 0;
@@ -197,7 +198,6 @@ const Skills = ({ screenSize = {}, isMobile, isMTablet }) => {
         break;
     }
     setCurrTab({ key: value, index: pos });
-    console.log(currTab);
     setShowIcons(false);
   }
   return (

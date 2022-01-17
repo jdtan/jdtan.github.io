@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Head from "next/head";
+import styled from "styled-components";
 
 import NavComponent from "../components/Navigation";
 import HomeComponent from "./home";
@@ -8,26 +9,6 @@ import SkillSetComponent from "./skills";
 import ProjectsComponent from "./projects";
 import ContactComponent from "./contact";
 import ButtonToTop from "../components/ButtonToTop";
-
-import styled, { css } from "styled-components";
-
-export const screenSize = {
-  "s-mobile": "320px",
-  mobile: "480px",
-  tablet: "768px",
-  "m-tablet": "810px",
-  "l-tablet": "1024px",
-};
-
-const StyledText = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 75vh;
-  align-items: center;
-  font-family: Montserrat;
-  font-size: 2em;
-`;
 
 const navButtons = [
   {
@@ -109,19 +90,15 @@ const Index = () => {
       </Head>
       <SkipNavigation href="#home">Skip Navigation</SkipNavigation>
 
-      <NavComponent screenSize={screenSize} pages={navButtons} />
+      <NavComponent pages={navButtons} />
 
-      <ButtonToTop screenSize={screenSize} isMobile={isMobile} />
+      <ButtonToTop isMobile={isMobile} />
 
       <HomeComponent />
-      <AboutMeComponent screenSize={screenSize} />
-      <SkillSetComponent
-        screenSize={screenSize}
-        isMobile={isMobile}
-        isMTablet={isMTablet}
-      />
+      <AboutMeComponent />
+      <SkillSetComponent isMobile={isMobile} isMTablet={isMTablet} />
       <ProjectsComponent />
-      <ContactComponent screenSize={screenSize} />
+      <ContactComponent />
     </>
   );
 };
