@@ -116,7 +116,7 @@ const PositionImage = styled.div`
 const IntroText = "Hello, my name is Jaddie!";
 
 const AboutText =
-  "Welcome to my corner of the internet! I am in a Dual-Degree Computer Science programme and am pursuing a Bachelor of Science and a Bachelor of Engineering  at Simon Raser University and Zhejiang University respectively." +
+  "Welcome to my corner of the internet! I am in a Dual-Degree Computer Science programme and am pursuing a Bachelor of Science and a Bachelor of Engineering  at Simon Fraser University and Zhejiang University respectively." +
   "\n\nEven though I am near the end of my programme, I will always consider myself a student as there is no end to learning and I am always ready to discover new opportunities." +
   "\n\nMy objective is to make the web more user-friendly since it is a fantastic place to acquire new skills and interests and it is something I want everyone to be able to access." +
   "\n\nMy current passions are responsive web design and data science.";
