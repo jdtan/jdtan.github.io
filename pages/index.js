@@ -29,7 +29,7 @@ const navButtons = [
   },
 ];
 
-const detectScreenType = (width) => {
+const DetectScreenType = (width) => {
   const [targetReached, setTargetReached] = useState(false);
 
   const updateTarget = useCallback((e) => {
@@ -79,8 +79,8 @@ const SkipNavigation = styled.a`
 `;
 
 const Index = () => {
-  const isMobile = detectScreenType(480);
-  const isMTablet = detectScreenType(810);
+  const isMobile = DetectScreenType(480);
+  const isMTablet = DetectScreenType(810);
   return (
     <>
       <Head>

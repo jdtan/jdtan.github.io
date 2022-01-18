@@ -139,7 +139,7 @@ const Home = () => {
         <TextContainer>
           <WelcomeText>
             HELLO<span className="accentColor">!</span>
-            {"\n"}I<span className="accentColor">'</span>M JADDIE
+            {"\n"}I<span className="accentColor">&rsquo;</span>M JADDIE
           </WelcomeText>
           <InfoText>A Student Web Developer</InfoText>
         </TextContainer>
