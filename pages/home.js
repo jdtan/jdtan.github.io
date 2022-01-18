@@ -122,7 +122,7 @@ const TextContainer = styled.div`
 
 const Home = () => {
   const handleDownClick = () => {
-    window.scrollBy(0, window.innerHeight);
+    window.location.href = "#about-me";
   };
   return (
     <HomeContainer id="home" className="page">
