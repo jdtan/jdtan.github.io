@@ -49,8 +49,8 @@ const NavButtonContainer = styled.button.attrs(() => ({
     outline: none;
   }
   @media only screen and (max-width: ${screenSize["tablet"]}) {
-    ${(hamActive) =>
-      hamActive &&
+    ${(props) =>
+      props.isActive &&
       css`
         display: block;
         text-align: center;
@@ -96,11 +96,11 @@ const HamburgerBar = styled.span`
   transition: all 0.3s ease-in-out;
   background-color: #ff5d73;
   border-radius: 3px;
+  ${(props) => console.log("in hamburger bar")}
 `;
 
 const HamburgerCSS = css`
   transition: all 0.3s ease-in-out;
-
   ${HamburgerBar}:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     background-color: white;
@@ -155,13 +155,22 @@ const Navigation = ({ pages = [] }) => {
   return (
     <NavBarContainer>
       <NavBarMenu isActive={hamActive}>
-        <NavButtonContainer onClick={() => handleNavClick("#about-me")}>
+        <NavButtonContainer
+          onClick={() => handleNavClick("#about-me")}
+          isActive={hamActive}
+        >
           {pages[0].label}
         </NavButtonContainer>
-        <NavButtonContainer onClick={() => handleNavClick("#projects")}>
+        <NavButtonContainer
+          onClick={() => handleNavClick("#projects")}
+          isActive={hamActive}
+        >
           {pages[1].label}
         </NavButtonContainer>
-        <NavButtonContainer onClick={() => handleNavClick("#contact")}>
+        <NavButtonContainer
+          onClick={() => handleNavClick("#contact")}
+          isActive={hamActive}
+        >
           {pages[2].label}
         </NavButtonContainer>
         {/*
