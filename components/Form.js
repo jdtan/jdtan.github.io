@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Form.css";
 import styled from "styled-components";
 
 const ContactForm = ({ screenSize = {} }) => {
@@ -12,26 +11,22 @@ const ContactForm = ({ screenSize = {} }) => {
     color: #ff5d73;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    /* box-shadow: 0px 4px 4px rgba(255, 93, 115, 0.15); */
     font-size: 2rem;
     margin-top: 2rem;
 
     &:hover {
       box-shadow: 0px 4px 4px rgba(255, 93, 115, 0.3);
     }
-    @media only screen and (max-width: ${screenSize["l-tablet"]}) {
-      /* margin-top: 2em; */
-    }
     @media only screen and (max-width: ${screenSize["m-tablet"]}) {
       margin-top: 1em;
     }
     @media only screen and (max-width: ${screenSize["mobile"]}) {
-      bottom: 1em;
-      position: absolute;
+      position: relative;
+      margin-bottom: 1em;
       font-size: 1.8rem;
     }
     @media only screen and (max-height: 746px) {
-      bottom: 0.5em;
+      margin-bottom: 0.5em;
     }
   `;
 
@@ -77,20 +72,12 @@ const ContactForm = ({ screenSize = {} }) => {
     font-size: 2rem;
     @media only screen and (max-width: ${screenSize["mobile"]}) {
       margin-bottom: 0;
-      /* font-size: 18px; */
       font-size: 1.8rem;
     }
   `;
 
   const StyledTextArea = styled.textarea`
     width: 100%;
-    @media only screen and (max-width: ${screenSize["mobile"]}) {
-      /* height: calc(100% - 110px); */
-      height: calc(100% - 13rem);
-    }
-    @media only screen and (max-height: 746px) {
-      height: calc(100% - 14em);
-    }
   `;
   return (
     <StyledForm
@@ -118,7 +105,14 @@ const ContactForm = ({ screenSize = {} }) => {
         </StyledLabel>
         <input type="email" name="email" required style={{ width: "100%" }} />
       </FormRow>
-      <FormRow style={{ display: "flex", flexDirection: "column" }}>
+      <FormRow
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          maxHeight: "100%",
+          minHeight: "5em",
+        }}
+      >
         <StyledLabel htmlFor="message">message</StyledLabel>
         <StyledTextArea name="message" cols="30" rows="10"></StyledTextArea>
       </FormRow>
