@@ -96,23 +96,6 @@ const HamburgerBar = styled.span`
   transition: all 0.3s ease-in-out;
   background-color: #ff5d73;
   border-radius: 3px;
-  ${(props) => console.log("in hamburger bar")}
-`;
-
-const HamburgerCSS = css`
-  transition: all 0.3s ease-in-out;
-  ${HamburgerBar}:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-    background-color: white;
-  }
-  ${HamburgerBar}:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-    background-color: white;
-  }
-  ${HamburgerBar}:nth-child(2) {
-    opacity: 0;
-    background-color: white;
-  }
 `;
 
 const HamburgerMenu = styled.div.attrs(() => ({
@@ -126,7 +109,23 @@ const HamburgerMenu = styled.div.attrs(() => ({
   @media only screen and (max-width: ${screenSize["tablet"]}) {
     cursor: pointer;
     display: block;
-    ${(props) => props.isActive && HamburgerCSS}
+    ${(props) =>
+      props.isActive &&
+      css`
+        transition: all 0.3s ease-in-out;
+        ${HamburgerBar}:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+          background-color: white;
+        }
+        ${HamburgerBar}:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+          background-color: white;
+        }
+        ${HamburgerBar}:nth-child(2) {
+          opacity: 0;
+          background-color: white;
+        }
+      `}
   }
 `;
 
