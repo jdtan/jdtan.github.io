@@ -142,7 +142,7 @@ const Contact = () => {
   return (
     <PageContainer>
       <div className="sectionTitle">
-        Let<span className="accentColor">'</span>s Connect
+        Let<span className="accentColor">&rsquo;</span>s Connect
         <span className="accentColor">:</span>
       </div>
       <LayoutContainer>
