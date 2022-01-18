@@ -112,17 +112,17 @@ const HamburgerMenu = styled.div.attrs(() => ({
     ${(props) =>
       props.isActive &&
       css`
-        ${HamburgerBar} {
+        > * {
           background-color: white;
         }
         transition: all 0.3s ease-in-out;
-        ${HamburgerBar}:nth-child(1) {
+        span:nth-child(1) {
           transform: translateY(8px) rotate(45deg);
         }
-        ${HamburgerBar}:nth-child(3) {
+        span:nth-child(3) {
           transform: translateY(-8px) rotate(-45deg);
         }
-        ${HamburgerBar}:nth-child(2) {
+        span:nth-child(2) {
           opacity: 0;
         }
       `}
